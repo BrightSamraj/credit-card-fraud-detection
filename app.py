@@ -1,6 +1,17 @@
 import streamlit as st
 import pickle
 import numpy as np
+import sklearn
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from ydata_profiling import ProfileReport
+import pandas as pd
+
+df = pd.read_csv("credit_card_data.csv")
+profile = ProfileReport(df, title="Credit Card Fraud Report", explorative=True)
+profile.to_file("credit_card_fraud_report.html")
+
 
 st.title("Credit Card Fraud Detection App")
 st.write("Predict whether a transaction is Legitimate or Fraudulent using a Decision Tree model.")
@@ -23,4 +34,5 @@ if st.button("Predict"):
     if result == 1:
         st.error("🚨 Fraudulent Transaction Detected!")
     else:
+
         st.success("✅ Legitimate Transaction")
