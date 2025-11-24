@@ -3,3 +3,8 @@ scikit-learn
 pandas
 numpy
 ydata-profiling
+setuptools
+wheel
+ydata-profiling==4.6.1
+
+
