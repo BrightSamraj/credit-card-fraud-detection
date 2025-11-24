@@ -1,10 +1,6 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
 import pandas as pd
 import pathlib
 
@@ -69,4 +65,5 @@ if st.button("Predict"):
             st.success("✅ Legitimate Transaction")
     except Exception as e:
         st.error(f"❌ Prediction Error: {e}")
+
 
