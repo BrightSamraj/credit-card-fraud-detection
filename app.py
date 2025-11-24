@@ -5,7 +5,6 @@ import sklearn
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from ydata_profiling import ProfileReport
 import pandas as pd
 
 df = pd.read_csv("credit_card_data.csv")
@@ -36,3 +35,4 @@ if st.button("Predict"):
     else:
 
         st.success("✅ Legitimate Transaction")
+
