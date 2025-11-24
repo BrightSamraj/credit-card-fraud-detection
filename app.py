@@ -1,7 +1,6 @@
 import streamlit as st
-import pickle
 import numpy as np
-import pandas as pd
+import pickle
 import pathlib
 
 st.set_page_config(page_title="Credit Card Fraud Detection", page_icon="💳")
@@ -29,7 +28,7 @@ else:
 
 
 # ---------------------------------------------------------------------
-# 👉 LOAD MODEL (NO ProfileReport, NO ydata-profiling)
+# 👉 LOAD MODEL
 # ---------------------------------------------------------------------
 try:
     model = pickle.load(open("decision_tree_entropy_model.pkl", "rb"))
@@ -65,5 +64,3 @@ if st.button("Predict"):
             st.success("✅ Legitimate Transaction")
     except Exception as e:
         st.error(f"❌ Prediction Error: {e}")
-
-
